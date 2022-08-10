@@ -40,17 +40,26 @@ INSTALLED_APPS = [
     'rest_framework',
     'action',
     'anomaly',
-    'reason'
+    'reason',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:4000',
 ]
 
 ROOT_URLCONF = 'machine_projects.urls'
@@ -83,6 +92,11 @@ DATABASES = {
         'NAME': 'machine_monitoring',
     }
 }
+
+REST_FRAMEWORK = {
+    'DATETIME_FORMAT' : '%Y-%m-%dT%H:%M:S',
+}
+
 
 
 # Password validation

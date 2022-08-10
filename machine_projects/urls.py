@@ -22,10 +22,10 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('actions', ActionViewsset)
-router.register('anomalies', AnomalyViewsset)
 router.register('reasons', ReasonViewsset)
 
 urlpatterns = [
     path('api/', include(router.urls)),
+    path('api/anomalies/', AnomalyView.as_view()),
     path('admin/', admin.site.urls),
 ]
