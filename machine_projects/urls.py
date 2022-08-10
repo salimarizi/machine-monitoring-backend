@@ -18,7 +18,6 @@ from django.urls import path, include
 from action.views import *
 from anomaly.views import *
 from reason.views import *
-from files.views import *
 from rest_framework import routers
 
 router = routers.DefaultRouter()
@@ -28,6 +27,5 @@ router.register('reasons', ReasonViewsset)
 urlpatterns = [
     path('api/', include(router.urls)),
     path('api/anomalies/', AnomalyView.as_view()),
-    path('files/', FileView.as_view()),
     path('admin/', admin.site.urls),
 ]
