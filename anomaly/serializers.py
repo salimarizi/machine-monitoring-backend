@@ -29,5 +29,7 @@ class AnomalySerializer(serializers.ModelSerializer):
             'anomaly',
             'sensor',
             'sound_clip',
-            'comments'
+            'comments',
+            'wave',
+            'spectogram'
         ]
