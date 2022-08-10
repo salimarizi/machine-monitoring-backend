@@ -4,4 +4,4 @@ from rest_framework import serializers
 class ActionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Action
-        fields = ['id', 'name']
+        fields = ['_id', 'name']

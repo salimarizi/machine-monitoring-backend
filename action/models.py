@@ -5,5 +5,5 @@ from djongo import models
 class Action(models.Model):
     class Meta:
         db_table = 'actions'
-    id = models.ObjectIdField()
+    _id = models.ObjectIdField(db_column='_id')
     name = models.CharField(max_length=10)
