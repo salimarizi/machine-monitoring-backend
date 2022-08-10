@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from action.views import *
 from anomaly.views import *
+from reason.views import *
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register('actions', ActionViewsset)
 router.register('anomalies', AnomalyViewsset)
+router.register('reasons', ReasonViewsset)
 
 urlpatterns = [
     path('api/', include(router.urls)),
